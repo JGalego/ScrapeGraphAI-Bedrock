@@ -26,9 +26,9 @@ container.video("https://youtu.be/ljoY1W6gPnY")
 show_pages([
     Page("pages/scrapegraphai_bedrock.py", "Home", "🏠"),
     Page("pages/smart_scraper.py", "Smart Scraper", "🥐"),
+	Page("pages/csv_scraper.py", "CSV Scraper", "🍴"),
     Page("pages/json_scraper.py", "JSON Scraper", "🌸"),
-    Page("pages/csv_scraper.py", "CSV Scraper", "🍴"),
+	Page("pages/xml_scraper.py", "XML Scraper", "🧾"),
     Page("pages/script_generator.py", "Script Generator", "👨‍💻"),
-    Page("pages/search_graph.py", "Search Graph", "🔎"),
-    Page("pages/xml_scraper.py", "XML Scraper", "🧾")
+    Page("pages/search_graph.py", "Search Graph", "🔎")
 ])

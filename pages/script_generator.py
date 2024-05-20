@@ -47,19 +47,20 @@ graph_config = {
 
 # 2. Create the graph instance and run it
 graph = ScriptCreatorGraph(
-	prompt=prompt,
-	source=source,
-	config=graph_config
+    prompt=prompt,
+    source=source,
+    config=graph_config
 )
 
 # 3. Scrape away!
 def run():
     """Execute graph and return result"""
-    st.session_state.output = None
-    try:
-        st.session_state.output = graph.run()
-    except Exception as ex:
-        st.error(ex, icon="🚨")
+    with st.spinner("Running graph 🏃"):
+        st.session_state.output = None
+        try:
+            st.session_state.output = graph.run()
+        except Exception as ex:
+            st.error(ex, icon="🚨")
 
 run = st.button(
     label="Run",

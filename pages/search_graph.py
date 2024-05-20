@@ -57,11 +57,12 @@ graph = SearchGraph(
 # 3. Scrape away!
 def run():
     """Execute graph and return result"""
-    st.session_state.output = None
-    try:
-        st.session_state.output = graph.run()
-    except Exception as ex:
-        st.error(ex, icon="🚨")
+    with st.spinner("Running graph 🏃"):
+        st.session_state.output = None
+        try:
+            st.session_state.output = graph.run()
+        except Exception as ex:
+            st.error(ex, icon="🚨")
 
 run = st.button(
     label="Run",
