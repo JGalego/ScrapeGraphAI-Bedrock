@@ -6,30 +6,41 @@ In these examples, we will show you how to integrate [Amazon Bedrock](https://aw
 
 #### Instructions
 
-0. Set AWS credentials
+1. Set AWS credentials
 
     ```bash
+    # Option 1: (recommended) AWS CLI
+    aws configure
+
+    # Option 2: environment variables
     export AWS_ACCESS_KEY_ID=...
     export AWS_SECRET_ACCESS_KEY=...
     export AWS_SESSION_TOKEN=...
     export AWS_DEFAULT_REGION=...
     ```
 
-1. Install dependencies
+2. Install dependencies
 
     ```bash
+    # Install Python packages
     pip install -r requirements.txt
+
+    # Install browsers
+    # https://playwright.dev/python/docs/browsers#install-browsers
+    playwright install
+
+    # Install system dependencies
+    # https://playwright.dev/python/docs/browsers#install-system-dependencies
+    playwright install-deps
     ```
 
-2. Run the application
+3. Start the demo application
 
     ```bash
+    # Run the full application
     streamlit run pages/scrapegraphai_bedrock.py
-    ```
 
-3. Run a single demo
-
-    ```bash
+    # or just a single demo
     streamlit run pages/smart_scraper.py
     ```
 
