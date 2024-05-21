@@ -28,14 +28,15 @@ def add_graph_config_settings():
     )
 
     st.session_state.embedder = st.selectbox(
-        label="Choose an embedding model",
+        label="Choose an embedder",
         options=embedders,
         index=embedders.index("cohere.embed-multilingual-v3")
     )
 
-    st.session_state.temperature = st.slider(
-        label="Pick a temperature",
-        min_value=0.0,
-        max_value=1.0,
-        value=0.0
-    )
+    with st.expander("Advanced Settings 📻"):
+        st.session_state.temperature = st.slider(
+            label="Pick a temperature",
+            min_value=0.0,
+            max_value=1.0,
+            value=0.0
+        )
