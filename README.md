@@ -6,31 +6,31 @@ In these examples, we will show you how to integrate [Amazon Bedrock](https://aw
 
 #### Instructions
 
-0/ Set AWS credentials
+0. Set AWS credentials
 
-	```bash
-	export AWS_ACCESS_KEY_ID=...
-	export AWS_SECRET_ACCESS_KEY=...
-	export AWS_SESSION_TOKEN=...
-	export AWS_DEFAULT_REGION=...
-	```
+    ```bash
+    export AWS_ACCESS_KEY_ID=...
+    export AWS_SECRET_ACCESS_KEY=...
+    export AWS_SESSION_TOKEN=...
+    export AWS_DEFAULT_REGION=...
+    ```
 
-1/ Install dependencies
+1. Install dependencies
 
-	```bash
-	pip install -r requirements.txt
-	```
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-2a/ Run the application
+2. Run the application
 
-	```bash
-	streamlit run pages/scrapegraphai_bedrock.py
-	```
+    ```bash
+    streamlit run pages/scrapegraphai_bedrock.py
+    ```
 
-2b/ Run a single demo
+3. Run a single demo
 
-	```bash
-	streamlit run pages/smart_scraper.py
-	```
+    ```bash
+    streamlit run pages/smart_scraper.py
+    ```
 
 ![](scrapegraphai_bedrock.gif)
