@@ -1,2 +1,5 @@
 streamlit
 st-pages
+
+# Bleeding edge stuff!
+git+https://github.com/VinciGit00/Scrapegraph-ai@pre/beta
