@@ -5,11 +5,10 @@ https://scrapegraph-doc.onrender.com/docs/Graphs/search_graph
 
 import streamlit as st
 
-from helper import add_graph_config_settings
+from pages.helper import add_graph_config_settings
 
 from scrapegraphai.graphs import SearchGraph
 
-st.set_page_config(page_title="Search Graph", page_icon="🔎")
 st.markdown("""
 ### Search Graph
 
@@ -39,7 +38,9 @@ add_graph_config_settings()
 graph_config = {
     "llm": {
         "model": f"bedrock/{st.session_state.llm}",
-        "temperature": st.session_state.temperature
+        "model_kwargs": {
+            "temperature": st.session_state.temperature
+        }
     },
     "embeddings": {
         "model": f"bedrock/{st.session_state.embedder}"
@@ -56,11 +57,11 @@ graph = SearchGraph(
 
 # 3. Scrape away!
 def run():
-    """Execute graph and return result"""
+    """Execute graph and display results"""
     with st.spinner("Running graph 🏃"):
         st.session_state.output = None
         try:
-            st.session_state.output = graph.run()
+            st.session_state.search_graph_output = graph.run()
         except Exception as ex:
             st.error(ex, icon="🚨")
 
@@ -70,6 +71,6 @@ run = st.button(
     disabled=not prompt
 )
 
-if st.session_state.get('output', None):
+if st.session_state.get('search_graph_output', None):
     st.write("### Output")
-    st.write(st.session_state.output)
+    st.write(st.session_state.search_graph_output)

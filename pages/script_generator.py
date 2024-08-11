@@ -5,11 +5,10 @@ https://scrapegraph-doc.onrender.com/docs/Graphs/script_creator_graph
 
 import streamlit as st
 
-from helper import add_graph_config_settings
+from pages.helper import add_graph_config_settings
 
 from scrapegraphai.graphs import ScriptCreatorGraph
 
-st.set_page_config(page_title="Script Generator", page_icon="👨‍💻")
 st.markdown("""
 ### Script Generator
 
@@ -37,7 +36,9 @@ add_graph_config_settings()
 graph_config = {
     "llm": {
         "model": f"bedrock/{st.session_state.llm}",
-        "temperature": st.session_state.temperature
+        "model_kwargs": {
+            "temperature": st.session_state.temperature
+        }
     },
     "embeddings": {
         "model": f"bedrock/{st.session_state.embedder}"
@@ -58,7 +59,7 @@ def run():
     with st.spinner("Running graph 🏃"):
         st.session_state.output = None
         try:
-            st.session_state.output = graph.run()
+            st.session_state.script_generator_output = graph.run()
         except Exception as ex:
             st.error(ex, icon="🚨")
 
@@ -68,6 +69,6 @@ run = st.button(
     disabled='graph' not in vars()
 )
 
-if st.session_state.get('output', None):
+if st.session_state.get('script_generator_output', None):
     st.write("### Output")
-    st.code(st.session_state.output)
+    st.code(st.session_state.script_generator_output)

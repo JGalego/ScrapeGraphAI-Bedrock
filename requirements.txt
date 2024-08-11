@@ -1,5 +1,5 @@
 streamlit
 st-pages
 
-# Bleeding edge stuff!
-git+https://github.com/VinciGit00/Scrapegraph-ai@pre/beta
+# TODO: Switch to something more stable
+git+https://github.com/ScrapeGraphAI/Scrapegraph-ai

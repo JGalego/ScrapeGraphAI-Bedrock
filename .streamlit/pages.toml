@@ -1,0 +1,34 @@
+[[pages]]
+path = "pages/scrapegraphai_bedrock.py"
+name = "Home"
+icon = "🏡"
+
+[[pages]]
+path = "pages/smart_scraper.py"
+name = "Smart Scraper"
+icon = "🥐"
+
+[[pages]]
+path = "pages/csv_scraper.py"
+name = "CSV Scraper"
+icon = "🍴"
+
+[[pages]]
+path = "pages/json_scraper.py"
+name = "JSON Scraper"
+icon = "🌸"
+
+[[pages]]
+path = "pages/xml_scraper.py"
+name = "XML Scraper"
+icon = "🧾"
+
+[[pages]]
+path = "pages/script_generator.py"
+name = "Script Generator"
+icon = "👨‍💻"
+
+[[pages]]
+path = "pages/search_graph.py"
+name = "Search Graph"
+icon = "🔎"

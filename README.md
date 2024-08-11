@@ -37,11 +37,7 @@ In these examples, we will show you how to integrate [Amazon Bedrock](https://aw
 3. Start the demo application
 
     ```bash
-    # Run the full application
-    streamlit run pages/scrapegraphai_bedrock.py
-
-    # or just a single demo
-    streamlit run pages/smart_scraper.py
+    streamlit run main.py
     ```
 
 ![](scrapegraphai_bedrock.gif)
